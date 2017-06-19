@@ -1,0 +1,19 @@
+// GRID BASE CONFIG
+$grid-columns: 12; //IloĹ›Ä‡ kolumn grid'a
+$container: 970px; // SzerokoĹ›Ä‡ kontenera (wrappera)
+
+$desktopXS-grid-columns: 12;
+$tablet-grid-columns: 12;
+$mobile-grid-columns: 12;
+$mobileS-grid-columns: 12;
+
+$robo-regular: 'Roboto Slab', serif;
+$monte-regular:  "Montserrat-Regular",sans-serif;
+$monte-bold: "Montserrat-Bold",sans-serif;
+
+//MEDIA QUERIES
+$desktop: "min-width: 769px";
+$desktop-xs: "max-width: 1024px";
+$tablet: "max-width: 768px";
+$phone-xl: "max-width: 425px";
+$phone-xs: "max-width: 375px";

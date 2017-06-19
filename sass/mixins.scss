@@ -1,0 +1,102 @@
+@import "variables";
+
+
+%clearfix {
+    *zoom: 1;
+    &:before, 
+		&:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// GRID
+@mixin container($size: $container) {
+  width: 100%;
+  max-width: $size;
+  margin: 0 auto;
+  @extend %clearfix;
+}
+
+@for $i from 1 through $grid-columns {
+
+  .column-#{$i} {
+	width: 100% / $grid-columns * $i;
+	float: left;
+	min-height: 1px;
+  }
+}
+
+//MOBILE GRID
+
+//Desktop XS
+@media all and($desktop-xs) {
+
+  @for $i from 1 through $desktopXS-grid-columns {
+
+	.large-#{$i} {
+	  width: 100% / $desktopXS-grid-columns * $i;
+	  float: left;
+	  min-height: 1px;
+	}
+  }
+
+}
+
+//Tablet
+@media all and($tablet) {
+
+  @for $i from 1 through $tablet-grid-columns {
+
+	.medium-#{$i} {
+	  width: 100% / $tablet-grid-columns * $i;
+	  float: left;
+	  min-height: 1px;
+	  
+	  @if $i == $tablet-grid-columns {
+		  img {
+			  padding-left: 0;
+			  padding-right: 0;
+		  }
+	  }
+	}
+  }
+
+}
+
+//Mobile
+@media all and($phone-xl) {
+
+  @for $i from 1 through $mobile-grid-columns {
+
+	.small-#{$i} {
+	  width: 100% / $mobile-grid-columns * $i;
+	  float: left;
+	  min-height: 1px;
+	}
+  }
+}
+
+//Mobile small
+@media all and($phone-xs) {
+
+  @for $i from 1 through $mobileS-grid-columns {
+
+	.xsmall-#{$i} {
+	  width: 100% / $mobileS-grid-columns * $i;
+	  float: left;
+	  min-height: 1px;
+	}
+  }
+}
+
+
+// FONTS
+@mixin font($size) {
+	font-size: rem($size);
+	line-height: 1.5;
+	margin: (rem($size) * 1.20) 0;
+}

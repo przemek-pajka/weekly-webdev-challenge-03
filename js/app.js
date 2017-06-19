@@ -13,4 +13,15 @@
     $(window).click(function () {
         $('body').removeClass('overflow-hidden');
     });
+    
+    
+    // A solution to the problem with hover navigation
+    $(function() {
+      $('.top-wrapper__main-nav ul > li').each(function(){
+        wid = $(this).width();
+        $(this).css('width', wid+'px');
+      });
+    });
+
 })();
+
